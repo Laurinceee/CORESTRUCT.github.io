@@ -1,0 +1,261 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #f3d3a1;
+    width: 20%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ddd;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    margin-right: 200px;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+}
+
+ul li {
+    width: 100%;
+    margin: 1rem 0;
+    margin-left: 30px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+}
+
+ul li a .icon {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+ul li a.active {
+    background-color: #edd8b4;
+    font-weight: bold;
+}
+
+main {
+    width: 80%;
+    flex: 1;
+    padding: 1rem 2rem;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.profile-section {
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  background-color: #f1b86d;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.profile-details h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.profile-details p {
+    font-size: 14px;
+    color: #777;
+}
+
+.info-section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 1.5rem;
+}
+
+.info-section p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+
+
+
+
+.containermenu{
+justify-content: flex-start;
+height: 100%;
+width: 290px;
+position: absolute;
+margin: 0 -1px;
+background: #F2ECE5;
+z-index: 1;
+transition: 0.5s ease;
+transform: translateX(-303px);
+}
+
+.containermenu .head{
+color: #fbfdce;
+font-size: 30px;
+font-weight: bold;
+padding: 30px;
+text-transform: uppercase;
+text-align: center;
+letter-spacing: 3px;
+background: linear-gradient(30deg, #b48b5d,  #EEB471);
+}
+
+ol{
+width: 100%;
+list-style: none;
+}
+
+ol li{
+display: block;
+width: 100%;
+}
+
+ol li a{
+    color: #000000f6;
+    padding: 15px 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: -2px -70px;
+    width: 270px;
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+    text-transform: capitalize;
+    }
+    
+ol li a i{
+    margin-left: 100px;
+    width: 70px;
+    font-size: 25px;
+    text-align: center;
+    padding-left: 30px;
+    }
+
+ol li:hover a{
+    background: #262020;
+    color: #FEF8F2;
+    letter-spacing: 5px;
+    width: 100%;
+}
+
+input{
+     -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+span{
+    position: absolute;
+    right: -65px;
+    top: 30px;
+    font-size: 25px;
+    border-radius: 3px;
+    color: #fff;
+    padding: 3px 8px;
+    cursor: pointer;
+    background: #000;
+}
+
+#bars{
+    background: #b48b5d;
+}
+
+#check:checked ~ .containermenu{
+    transform: translateX(0);
+}
+
+#check:checked ~ .containermenu #bars{
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    background: url(img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+    filter: brightness(60%);
+}
+
+#check:checked ~ section{
+    transform: scale(1.2);
+    filter: brightness(20%);
+}
+
+p{
+color: #51729B;
+font-family:  'georgia', serif;
+text-align: center;
+
+}
+
+h2{
+text-align: center;
+color: #51729B;
+font-family: serif;
+}
+
+body{
+margin: 0;
+padding: 0;
+display: grid;
+place-items: left;
+font-family: 'georgia', serif;
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 100vh;
+}
