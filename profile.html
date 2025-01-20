@@ -3,66 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
 </head>
-    <body>
-        <div class="container">
-            <aside class="sidebar">
-                <input type="checkbox" name="" id="check">
-                <div class="containermenu">
-                    <label for="check">
-                    <span class="fas fa-times" id="times"></span>
-                    <span class="fas fa-bars" id="bars"></span>
-                    </label>
-                </div>
-            
-            <div class="containermenu">
-            <div class="head">MENU</div>
-            <ol>
-                <li><a href="#"><i class="fas fa-user"></i>Homepage</a> </li>
-                <li><a href=""><i class="fas fa-calendar"></i>Account</a> </li>
-                <li><a href="Course.html"><i class="fas fa-coffee"></i>Course</a> </li>
-                <li><a href="inbox.html"><i class="fas fa-music"></i>Inbox</a> </li>
-                <li><a href="Calender.html"><i class="fas fa-video"></i>Calendar</a> </li>
-                <li><a href="help.html"><i class="fas fa-sign-out"></i>Help</a> </li>
-            </ol>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="icon-content">
+                <div><a href="home_page.html">menu</a></div>
+                <div><a href="profile.html">Profile</a></div>
+                <div><a href="file.html">Files</a></div>
+                <div><a href="Notification.html">Notification</a></div>
+                <div><a href="Global_Announce.html">Global announcement</a></div>
+                <div><a href="settting.html">Settings</a></div>
+                <div><a href="help.html">Help</a></div>
             </div>
-                <button class="menu-toggle">&#9776;</button>
-                <ul> 
-                    <li><a href="profile.html"><span class="icon"><img src="image/profile.jpg" alt="Profile Icon" width="20px" height="20"></span> Profile</a></li>
-                    <li><a href="file.html"><span class="icon"><img src="image/files.jpg" alt="Files Icon" width="20" height="20"></span> Files</a></li>
-                    <li><a href="Notification.html"><span class="icon"><img src="image/notification.jpg" alt="Notifications Icon" width="20" height="20"></span> Notifications</a></li>
-                    <li><a href="Global_Announce.html"><span class="icon"><img src="image/announcement.jpg" alt="Global Announcements Icon" width="20" height="20"></span> Global Announcements</a></li>
-                    <li><a href="settting.html"><span class="icon"><img src="image/setting.jpg" alt="Settings Icon" width="20" height="20"></span> Settings</a></li>
-                    <li><a href="help.html"><span class="icon"><img src="image/help.jpg" alt="Help Icon" width="20" height="20"></span> Help</a></li>
-                </ul>
-            </aside>
-    
-            <main>
-                <header>
-                    <h2>Profile</h2>
-                </header>
-                <section class="profile-section">
-                    <div class="profile-card">
-                        <div class="profile-image"></div>
-                        <div class="profile-details">
-                            <h2>Name of student</h2>
-                            <p>Course</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="info-section">
-                        <h3>Contact</h3>
-                        <p>No registered services, you can add some on the settings page</p>
-                        <h3>Biography</h3>
-                        <p>No biography has been added</p>
-                        <h3>Links</h3>
-                        <p>No links have been added</p>
-                    </div>
-                </section>
-            </main>
-        </div>
-    </body>
+        </aside>
 
+        <main>
+            <header>
+                <h2>Profile</h2>
+            </header>
+            <section class="profile-section">
+                <div class="profile-card">
+                    <div class="profile-image"></div>
+                    <div class="profile-details">
+                        <!-- Display user name from localStorage -->
+                        <h2 id="userName">Name</h2>
+                        <p id="userEmail">Email</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="info-section">
+                    <h3>Contact</h3>
+                    <p>No registered services, you can add some on the settings page</p>
+                    <h3>Biography</h3>
+                    <p>No biography has been added</p>
+                    <h3>Links</h3>
+                    <p>No links have been added</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Retrieve the logged-in user's data from localStorage
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (loggedInUser) {
+            // Display user info on the profile page
+            document.getElementById('userName').textContent = loggedInUser.name;
+            document.getElementById('userEmail').textContent = loggedInUser.email;
+        } else {
+            // Redirect to login page if no user is logged in
+            window.location.href = "login.html"; // Ensure this path is correct
+        }
+    </script>
+</body>
 </html>
