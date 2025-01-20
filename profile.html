@@ -17,6 +17,8 @@
                 <div><a href="Global_Announce.html">Global announcement</a></div>
                 <div><a href="settting.html">Settings</a></div>
                 <div><a href="help.html">Help</a></div>
+                <div><a href="index.html" id="logout-link">log-out</a></div>
+
             </div>
         </aside>
 
@@ -59,5 +61,19 @@
             window.location.href = "login.html"; // Ensure this path is correct
         }
     </script>
+    <!-- At the bottom of your profile.html file, just before the closing </body> tag -->
+<script>
+    // Log-out functionality
+    document.getElementById('logout-link').addEventListener('click', () => {
+        // Clear logged-in user data from localStorage
+        localStorage.removeItem('loggedInUser');
+
+        // Redirect to index.html
+        window.location.href = "index.html";
+    });
+</script>
+</body>
+</html>
+
 </body>
 </html>
