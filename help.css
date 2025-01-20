@@ -8,14 +8,6 @@ body {
     height: 100vh;
 }
 
-.navbar{
-    margin: none;
-    width: 85%;
-    transform: translateX(250px);
-    height: 20%;
-    background-color: coral;
-    display: flex;
-}
 
 
 .sidebar{
