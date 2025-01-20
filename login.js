@@ -49,7 +49,10 @@ actionBtn.addEventListener("click", () => {
     if (userExists) {
       showError("Email is already registered.");
     } else {
-      users.push({ name, email, password });
+      const newUser = { name, email, password };
+      users.push(newUser);
+      // Save user data to localStorage
+      localStorage.setItem('loggedInUser', JSON.stringify(newUser));
       alert("Account created successfully! You can now log in.");
       resetForm();
       toggleLink.click(); // Switch to login view
@@ -58,10 +61,12 @@ actionBtn.addEventListener("click", () => {
     // Login logic
     const user = users.find((user) => user.email === email && user.password === password);
     if (user) {
+      // Save user data to localStorage
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
       alert(`Welcome back, ${user.name}!`);
       resetForm();
       // Redirect to profile page
-      window.location.href = "profile.html"; // Ensure that this path points correctly to the profile page
+      window.location.href = "profile.html";
     } else {
       showError("Invalid email or password.");
     }
